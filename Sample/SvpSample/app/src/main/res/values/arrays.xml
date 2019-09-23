@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Finger Option value String-->
+    <string name="menu_finger_template_type_default">Suprema</string>
+    <string-array name="menu_finger_template_type">
+        <item>Suprema</item>
+        <item>ISO</item>
+        <item>ANSI</item>
+    </string-array>
+
+    <string name="menu_finger_security_level_default">Secure</string>
+    <string-array name="menu_finger_security_level">
+        <item>Normal</item>
+        <item>Secure</item>
+        <item>More Secure</item>
+    </string-array>
+
+    <string name="menu_finger_fast_mode_default">Auto</string>
+    <string-array name="menu_finger_fast_mode">
+        <item>Auto</item>
+        <item>Normal</item>
+        <item>Faster</item>
+        <item>Fastest</item>
+    </string-array>
+
+    <string name="menu_finger_fast_default">Auto</string>
+    <string-array name="menu_finger_fast">
+        <item>Auto</item>
+        <item>Normal</item>
+        <item>Faster</item>
+        <item>Fastest</item>
+    </string-array>
+
+    <string name="menu_finger_sensitive_default">7</string>
+    <string-array name="menu_finger_sensitive">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </string-array>
+
+    <string name="menu_finger_sensor_mode_default">Proximity</string>
+    <string-array name="menu_finger_sensor_mode">
+        <item>Always On</item>
+        <item>Proximity</item>
+    </string-array>
+
+    <string name="menu_finger_scan_timeout_default">10</string>
+    <string-array name="menu_finger_scan_timeout">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+
+    <string name="menu_finger_lfd_level_default">OFF</string>
+    <string-array name="menu_finger_lfd_level">
+        <item>OFF</item>
+        <item>Low</item>
+        <item>Middle</item>
+        <item>High</item>
+    </string-array>
+
+    <string name="menu_card_scan_timeout_default">10</string>
+    <string-array name="menu_card_scan_timeout">
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>20</item>
+    </string-array>
+
+    <string name="menu_card_byte_order_default">MSB</string>
+    <string-array name="menu_card_byte_order">
+        <item>MSB</item>
+        <item>LSB</item>
+    </string-array>
+
+</resources>

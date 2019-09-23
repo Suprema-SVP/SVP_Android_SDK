@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpgradeFragment"
+    tools:layout_editor_absoluteY="0dp">
+
+    <EditText
+        android:id="@+id/ftpHostEdit"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:autofillHints=""
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        app:layout_constraintBottom_toTopOf="@+id/ftpPortEdit"
+        app:layout_constraintStart_toEndOf="@+id/ftpHostTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="127.0.0.1" />
+
+    <TextView
+        android:id="@+id/ftpHostTitle"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_vertical"
+        android:text="FTP Host"
+        app:layout_constraintBottom_toTopOf="@+id/ftpPortTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ftpPortEdit"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:inputType="number"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        app:layout_constraintStart_toEndOf="@+id/ftpPortTitle"
+        app:layout_constraintTop_toTopOf="@+id/ftpHostEdit"
+        tools:text="21" />
+
+    <TextView
+        android:id="@+id/ftpPortTitle"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="FTP Port"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ftpHostTitle" />
+
+    <EditText
+        android:id="@+id/ftpUserNameEdit"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        app:layout_constraintStart_toEndOf="@+id/ftpUserNameTitle"
+        app:layout_constraintTop_toTopOf="@+id/ftpPortEdit"
+        tools:text="user" />
+
+    <TextView
+        android:id="@+id/ftpUserNameTitle"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="User Name"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ftpPortTitle" />
+
+    <EditText
+        android:id="@+id/ftpPasswordEdit"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        app:layout_constraintStart_toEndOf="@+id/ftpPasswordTitle"
+        app:layout_constraintTop_toTopOf="@+id/ftpUserNameEdit"
+        tools:text="password" />
+
+    <TextView
+        android:id="@+id/ftpPasswordTitle"
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Password"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ftpUserNameTitle" />
+
+    <TextView
+        android:id="@+id/firmwareNameTitle"
+        android:layout_width="140dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="File List"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ftpPasswordTitle" />
+
+    <Spinner
+        android:id="@+id/firmwareNameSpinner"
+        android:layout_width="252dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="24dp"
+        android:spinnerMode="dialog"
+        app:layout_constraintTop_toBottomOf="@+id/firmwareNameTitle"
+        tools:layout_editor_absoluteX="24dp" />
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.button.MaterialButton
+        android:id="@+id/getFirmwareFile"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="130dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/get_file"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firmwareNameSpinner" />
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.design.button.MaterialButton
+        android:id="@+id/upgradeFirmware"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="130dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="52dp"
+        android:text="@string/upgrade"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firmwareNameSpinner" />
+
+    <Switch
+        android:id="@+id/switchUsb"
+        android:layout_width="150dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="13dp"
+
+        android:text="USB MODE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firmwareNameSpinner" />
+
+</android.support.constraint.ConstraintLayout>

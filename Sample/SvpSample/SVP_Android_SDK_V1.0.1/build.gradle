@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('SVP_Android_SDK_V1.0.1.aar'))

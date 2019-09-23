@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/rl_option1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/option_title1"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/option_value1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    />
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/option_switch1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <View
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_option2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/option_title2"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/option_value2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <android.support.v7.widget.SwitchCompat
+                    android:id="@+id/option_switch2"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <View
+                android:background="@color/colorPrimaryDark"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"/>
+
+            <!--
+            <RelativeLayout
+                android:id="@+id/rl_option3"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/option_title3"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/option_value3"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_option4"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/option_title4"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/option_value4"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_option5"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/option_title5"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/option_value5"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_option6"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/option_title6"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/option_value6"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"/>
+            <RelativeLayout
+                android:id="@+id/rl_option7"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center_vertical">
+                <TextView
+                    android:id="@+id/option_title7"
+                    android:layout_width="210dp"
+                    android:layout_height="wrap_content"
+                    />
+                <TextView
+                    android:id="@+id/option_value7"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            <View
+                android:background="@color/colorAccent"
+                android:layout_width="fill_parent"
+                android:layout_height="1px"
+                android:layout_centerVertical="true"
+                android:layout_alignParentTop="true"/>
+                -->
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

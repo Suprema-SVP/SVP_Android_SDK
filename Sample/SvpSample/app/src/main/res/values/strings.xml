@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">SVP_Sample</string>
+    <string name="action_connect">Connect</string>
+    <string name="verify_finger">Verify Finger</string>
+    <string name="scan_finger">Scan Finger</string>
+    <string name="rescan_finger">Scan Finger try again</string>
+    <string name="enroll_finger">Enroll Finger</string>
+    <string name="delete_all_finger">Delete All Finger</string>
+    <string name="update_finger">Update Finger</string>
+    <string name="delete_1finger">Delete Finger</string>
+    <string name="scan_delete_finger">Scan Delete Finger</string>
+    <string name="set_finger_list">Set Finger List</string>
+    <string name="set_max_user">Set Max User</string>
+    <string name="delete_card">Delete all</string>
+    <string name="scan_card">Scan Card</string>
+    <string name="cancel">Cancel</string>
+    <string name="get_file">Get File List</string>
+    <string name="upgrade">Upgrade</string>
+    <string name="reboot">Reboot</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="finger_title">Finger Sample</string>
+    <string name="main_title">Omnis Sample</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="enroll_card">Enroll Card</string>
+    <string name="card_type">Type</string>
+
+    <string name="finger_security_level">[Finger] Security Level</string>
+    <string name="finger_fast_mode">[Finger] 1:N Fast Mode</string>
+    <string name="finger_sensitivity">[Finger] Sensitivity</string>
+    <string name="finger_sensor_mode">[Finger] Sensor Mode</string>
+    <string name="finger_template_format">[Finger] Template Format</string>
+    <string name="finger_scan_timeout">[Finger] Scan Timeout</string>
+    <string name="finger_lfd_level">[Finger] LFD Level</string>
+    <string name="finger_advanced_enrollment">[Finger] Advanced Enrollment</string>
+    <string name="finger_image_view">[Finger] Image View</string>
+
+    <string name="card_scan_timeout">[Card] Scan Timeout</string>
+    <string name="card_byte_order">[Card] Byte Order</string>
+
+    <string name="finger_image_summary">finger image </string>
+    <string name="led_test">LED Output Test</string>
+    <string name="relay_test">Relay Output Test</string>
+
+</resources>
