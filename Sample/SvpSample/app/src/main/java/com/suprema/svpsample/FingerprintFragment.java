@@ -94,6 +94,12 @@ public class FingerprintFragment extends BaseFragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        updateTextView();
+    }
+
+    @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
     }
@@ -152,15 +158,12 @@ public class FingerprintFragment extends BaseFragment {
         }
     }
 
-    public void setAppUserCount(String text) {
+    public void updateTextView() {
         if (mTextUserCount != null) {
-            mTextUserCount.setText(text);
+            mTextUserCount.setText("APP: " + SVP.userArray.size());
         }
-    }
-
-    public void setSdkUserCount(String text) {
         if (mTextSdkUserCount != null) {
-            mTextSdkUserCount.setText(text);
+            mTextSdkUserCount.setText("SDK: " + SVP.sdkUserCount);
         }
     }
 

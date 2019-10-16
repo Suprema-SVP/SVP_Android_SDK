@@ -32,7 +32,6 @@ import com.supremainc.sdk.callback.Event;
 import com.supremainc.sdk.callback.Fingerprint;
 import com.supremainc.sdk.callback.Input;
 import com.supremainc.sdk.callback.Punch;
-import com.supremainc.sdk.define.Card;
 import com.supremainc.sdk.define.ErrorCode;
 import com.supremainc.sdk.model.Finger;
 import com.supremainc.sdk.model.FingerList;
@@ -46,10 +45,8 @@ import com.supremainc.sdk.service.DeviceListener;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -118,9 +115,6 @@ public class MainActivity extends BaseActivity implements
     TextView mTextSdkVersion;
     @BindView(R.id.textFirmwareVersion)
     TextView mTextFirmwareVersion;
-
-    private Map<String,User> mUserMap = new HashMap<>();
-    private ArrayList<User> mUserArray = new ArrayList<>();
 
     private FragmentManager mFragmentManager = getSupportFragmentManager();
     private FingerprintFragment mFingerFragment = new FingerprintFragment();
@@ -214,7 +208,7 @@ public class MainActivity extends BaseActivity implements
                     case FINGER_TAB:
                         controlService(false, true, false, false);
                         mFragmentManager.beginTransaction().replace(R.id.fragment, mFingerFragment).commit();
-                        mFingerFragment.setAppUserCount("APP: " + mUserArray.size());
+                        mFingerFragment.updateTextView();
                         break;
                     case CARD_TAB:
                         mButton1.setText("scan"); mButton2.setText("clear");
@@ -526,7 +520,7 @@ public class MainActivity extends BaseActivity implements
             return;
 
         if (mFirstScan) {
-            if (mUserMap.containsKey(mFingerFragment.getUserId())) {
+            if (SVP.userMap.containsKey(mFingerFragment.getUserId())) {
                 showToast(this, "Already registered user.");
                 return;
             }
@@ -558,7 +552,7 @@ public class MainActivity extends BaseActivity implements
         if (validateUserId() == false)
             return;
 
-        if (!mUserMap.containsKey(mFingerFragment.getUserId())) {
+        if (!SVP.userMap.containsKey(mFingerFragment.getUserId())) {
             showToast(this, mFingerFragment.getUserId() + " User is unregistered");
         }
 
@@ -572,7 +566,7 @@ public class MainActivity extends BaseActivity implements
     }
 
     private String findUserIDByFingerID(int fingerID) {
-        Iterator it = mUserMap.values().iterator();
+        Iterator it = SVP.userMap.values().iterator();
         String userID = "";
 
         while ((it.hasNext())) {
@@ -651,7 +645,7 @@ public class MainActivity extends BaseActivity implements
         if (mFirstScan) {
             mEnrollFinger.clearData();
 
-            User user = mUserMap.get(mFingerFragment.getUserId());
+            User user = SVP.userMap.get(mFingerFragment.getUserId());
 
             mEnrollFinger.id = user.getFingerID(0); //
             mEnrollFinger.index = 0;
@@ -754,7 +748,7 @@ public class MainActivity extends BaseActivity implements
     }
 
     public void scanFingerVerifyComplete(Object object) {
-        User user = mUserMap.get(mFingerFragment.getUserId());
+        User user = SVP.userMap.get(mFingerFragment.getUserId());
         Finger finger = new Finger();
         finger.setTemplate(0, (byte[])object);
 
@@ -779,10 +773,20 @@ public class MainActivity extends BaseActivity implements
 
         if( mListTab.getSelectedTabPosition() == CARD_TAB ) {
             Punch punch = (Punch)object;
-            if (punch.type == Punch.PUNCH_TYPE_WIEGAND)
-                punch.type = Card.CARD_TYPE_WIEGAND;
 
-            CharSequence[] cardType = {"Unknown","CSN","Secure","Access" ,"Wiegand"};
+            CharSequence[] cardType = {
+                    "Unknown",
+                    "CSN",
+                    "Secure",
+                    "Access On",
+                    "MSR",
+                    "Barcode",
+                    "IC",
+                    "",
+                    "",
+                    "",
+                    "Wiegand"
+            };
 
             mCardFragment.setCardIDText(punch.displayString);
             mCardFragment.setCardTypeText(cardType[punch.type]);
@@ -845,11 +849,12 @@ public class MainActivity extends BaseActivity implements
         User user = new User(userID);
         user.addFinger(finger);
 
-        mUserMap.put(userID, user);
-        mUserArray.add(user);
+        SVP.userMap.put(userID, user);
+        SVP.userArray.add(user);
 
-        mFingerFragment.setAppUserCount("APP: " + mUserArray.size());
-        mFingerFragment.setSdkUserCount("SDK: " + mUserArray.size());
+        SVP.sdkUserCount = SVP.userArray.size();
+
+        mFingerFragment.updateTextView();
 
         Log.i(TAG, "[Enroll] user id:" + userID + ", finger id:" + finger.id);
     }
@@ -864,18 +869,17 @@ public class MainActivity extends BaseActivity implements
             e.printStackTrace();
         }
 
-        User user = mUserMap.get(userID);
+        User user = SVP.userMap.get(userID);
         user.updateFinger(finger);
 
         Log.i(TAG, "[Update] user id:" + userID + ", finger id:" + finger.id);
     }
 
     private void deleteUser(int fingerId) {
-        mUserMap.remove(findUserIDByFingerID(fingerId));
+        SVP.userMap.remove(findUserIDByFingerID(fingerId));
 
-        Iterator itr = mUserArray.iterator();
-        while (itr.hasNext())
-        {
+        Iterator itr = SVP.userArray.iterator();
+        while (itr.hasNext()) {
             User user = (User)itr.next();
             for(int i =0 ; i < user.getNumOfFinger(); ++i) {
                 if (user.getFingerID(i) == fingerId) {
@@ -886,12 +890,13 @@ public class MainActivity extends BaseActivity implements
             }
         }
 
-        mFingerFragment.setAppUserCount("APP: " + mUserArray.size());
-        mFingerFragment.setSdkUserCount("SDK: " + mUserArray.size());
+        SVP.sdkUserCount = SVP.userArray.size();
+
+        mFingerFragment.updateTextView();
     }
 
     public int setMaxUser() {
-        int userCount = mUserMap.size();
+        int userCount = SVP.userMap.size();
         if( userCount == 0) {
             showToast(this, "Please erroll user.");
             return -1;
@@ -905,15 +910,17 @@ public class MainActivity extends BaseActivity implements
 
             int index = (int)(Math.random() * userCount);
 
-            finger.setTemplate(0, mUserArray.get(index).getFinger(0).getTemplate(0));
-            finger.setTemplate(1, mUserArray.get(index).getFinger(0).getTemplate(1));
+            finger.setTemplate(0, SVP.userArray.get(index).getFinger(0).getTemplate(0));
+            finger.setTemplate(1, SVP.userArray.get(index).getFinger(0).getTemplate(1));
 
             list.addFinger(finger);
         }
 
         int result = SVP.manager.setFingerList(list);
 
-        mFingerFragment.setSdkUserCount("SDK: " + list.fingers.size());
+        SVP.sdkUserCount = list.fingers.size();
+
+        mFingerFragment.updateTextView();
 
         return result;
     }
@@ -924,7 +931,10 @@ public class MainActivity extends BaseActivity implements
             showToast(this, "Delete all success");
         }
 
-        mFingerFragment.setSdkUserCount("SDK: 0");
+        SVP.sdkUserCount = 0;
+
+        mFingerFragment.updateTextView();
+
         return result;
     }
 
@@ -944,7 +954,7 @@ public class MainActivity extends BaseActivity implements
 
     public int initFingerList() {
         FingerList fingerList = new FingerList();
-        Iterator it = mUserMap.values().iterator();
+        Iterator it = SVP.userMap.values().iterator();
 
         while ((it.hasNext())) {
             User user = (User)it.next();
@@ -953,7 +963,9 @@ public class MainActivity extends BaseActivity implements
             }
         }
 
-        mFingerFragment.setSdkUserCount("SDK: " + fingerList.fingers.size());
+        SVP.sdkUserCount = fingerList.fingers.size();
+
+        mFingerFragment.updateTextView();
 
         int result = SVP.manager.setFingerList(fingerList);
 
