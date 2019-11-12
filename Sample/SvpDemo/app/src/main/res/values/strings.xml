@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SVP_Demo</string>
+    <string name="scan_finger">Scan Finger</string>
+    <string name="scan_card">Scan Card</string>
+    <string name="rescan_finger">Scan Finger try again</string>
+
+    <string name="finger_security_level">Security Level</string>
+    <string name="finger_fast_mode">1:N Fast Mode</string>
+    <string name="finger_sensitivity">Sensitivity</string>
+    <string name="finger_sensor_mode">Sensor Mode</string>
+    <string name="finger_template_format">Template Format</string>
+    <string name="finger_scan_timeout">Scan Timeout</string>
+    <string name="finger_lfd_level">LFD Level</string>
+    <string name="finger_advanced_enrollment">Advanced Enrollment</string>
+    <string name="finger_image_view">Image View</string>
+
+    <string name="card_scan_timeout">Scan Timeout</string>
+    <string name="card_byte_order">Byte Order</string>
+
+    <string name="finger_image_summary">finger image </string>
+    <string name="led_test">LED Output Test</string>
+    <string name="relay_test">Relay Output Test</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">SVP</string>
+    <string name="nav_header_subtitle">Version : V1.0.0</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+</resources>

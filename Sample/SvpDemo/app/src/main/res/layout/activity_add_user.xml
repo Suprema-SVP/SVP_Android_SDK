@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.UserListActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="5dp"
+        android:paddingStart="0dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/selector_arrow" />
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Add User"
+            android:textColor="#FFFFFF"
+            android:textSize="21sp" />
+
+        <Button
+            android:id="@+id/btnComplete"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/selector_check"/>
+
+        <Button
+            android:id="@+id/btnMore"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/selector_more"
+            android:visibility="invisible"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/textEditId"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="81dp"
+        android:background="@null"
+        android:gravity="end"
+        android:inputType="number"
+        android:paddingEnd="15dp"
+        android:singleLine="true" />
+
+
+    <EditText
+        android:id="@+id/textEditName"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="-1dp"
+        android:background="@null"
+        android:gravity="end"
+        android:hint="Input Name"
+        android:inputType="textNoSuggestions"
+        android:paddingEnd="15dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btnEnrollFinger"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-14dp"
+        android:layout_marginTop="202dp"
+        android:gravity="start|center"
+        android:text="FingerPrint"
+        android:textAllCaps="false"
+        android:textColor="@android:color/tab_indicator_text"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textFingerprintState"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/textEditId"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="227dp"
+        android:layout_marginEnd="14dp"
+        android:text="Enroll Fingerprint"
+        android:textColor="@android:color/tab_indicator_text"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btnEnrollCard"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-14dp"
+        android:layout_marginTop="270dp"
+        android:gravity="start|center"
+        android:text="Card"
+        android:textColor="@android:color/tab_indicator_text"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textCardState"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/textEditId"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="297dp"
+        android:layout_marginEnd="14dp"
+        android:hint="Enroll Card"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="81dp"
+        android:text="ID"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="149dp"
+        android:text="Name"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider1"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="70dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/divider1"
+        android:layout_marginTop="70dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/divider2"
+        android:layout_marginTop="70dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:id="@+id/divider4"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/divider3"
+        android:layout_marginTop="70dp"
+        android:background="?android:attr/listDivider" />
+
+</RelativeLayout>

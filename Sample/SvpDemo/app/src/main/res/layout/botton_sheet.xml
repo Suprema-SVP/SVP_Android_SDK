@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="144dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnUpdate"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="10dp"
+        android:drawableStart="@drawable/ic_edit_style"
+        android:drawablePadding="15dp"
+        android:gravity="start|center"
+        android:text="Update User"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#EAEAEA" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        style="?android:borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:drawableStart="@drawable/ic_bottom_delete_style"
+        android:drawablePadding="15dp"
+        android:gravity="start|center"
+        android:text="Delete User"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+</LinearLayout>

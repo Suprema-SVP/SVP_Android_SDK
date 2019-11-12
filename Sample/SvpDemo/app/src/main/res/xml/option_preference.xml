@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="Fingerprint Option"
+        android:layout="@layout/preference_category_text_layout">
+
+        <ListPreference
+            android:defaultValue="@string/menu_finger_security_level_default"
+            android:entries="@array/menu_finger_security_level"
+            android:entryValues="@array/menu_finger_security_level"
+            android:key="pref_finger_security_level"
+            android:summary="@string/menu_finger_security_level_default"
+            android:title="@string/finger_security_level" />
+
+    <ListPreference
+        android:key="pref_finger_fast_mode"
+        android:title="@string/finger_fast_mode"
+        android:entries="@array/menu_finger_fast_mode"
+        android:entryValues="@array/menu_finger_fast_mode"
+        android:defaultValue="@string/menu_finger_fast_mode_default"
+        android:summary="@string/menu_finger_fast_mode_default"/>
+
+    <ListPreference
+        android:key="pref_finger_sensitivity"
+        android:title="@string/finger_sensitivity"
+        android:entries="@array/menu_finger_sensitive"
+        android:entryValues="@array/menu_finger_sensitive"
+        android:defaultValue="@string/menu_finger_sensitive_default"
+        android:summary="@string/menu_finger_sensitive_default"/>
+
+    <ListPreference
+        android:key="pref_finger_sensor_mode"
+        android:title="@string/finger_sensor_mode"
+        android:entries="@array/menu_finger_sensor_mode"
+        android:entryValues="@array/menu_finger_sensor_mode"
+        android:defaultValue="@string/menu_finger_sensor_mode_default"
+        android:summary="@string/menu_finger_sensor_mode_default"/>
+
+    <ListPreference
+        android:key="pref_finger_template_type"
+        android:title="@string/finger_template_format"
+        android:entries="@array/menu_finger_template_type"
+        android:entryValues="@array/menu_finger_template_type"
+        android:defaultValue="@string/menu_finger_template_type_default"
+        android:summary="@string/menu_finger_template_type_default"/>
+
+    <ListPreference
+        android:key="pref_finger_scan_timeout"
+        android:title="@string/finger_scan_timeout"
+        android:entries="@array/menu_finger_scan_timeout"
+        android:entryValues="@array/menu_finger_scan_timeout"
+        android:defaultValue="@string/menu_finger_scan_timeout_default"
+        android:summary="@string/menu_finger_scan_timeout_default"/>
+
+    <ListPreference
+        android:key="pref_finger_lfd_level"
+        android:title="@string/finger_lfd_level"
+        android:entries="@array/menu_finger_lfd_level"
+        android:entryValues="@array/menu_finger_lfd_level"
+        android:defaultValue="@string/menu_finger_lfd_level_default"
+        android:summary="@string/menu_finger_lfd_level_default"/>
+
+    <SwitchPreferenceCompat
+        android:key="pref_finger_advanced_enrollment"
+        android:title="@string/finger_advanced_enrollment" />
+
+    <SwitchPreferenceCompat
+        android:key="pref_finger_image"
+        android:title="@string/finger_image_view" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Card Option"
+        android:layout="@layout/preference_category_text_layout">
+
+    <ListPreference
+        android:key="pref_card_scan_timeout"
+        android:title="@string/card_scan_timeout"
+        android:entries="@array/menu_card_scan_timeout"
+        android:entryValues="@array/menu_card_scan_timeout"
+        android:defaultValue="@string/menu_card_scan_timeout_default"
+        android:summary="@string/menu_card_scan_timeout_default"/>
+
+    <ListPreference
+        android:key="pref_card_byte_order"
+        android:title="@string/card_byte_order"
+        android:entries="@array/menu_card_byte_order"
+        android:entryValues="@array/menu_card_byte_order"
+        android:defaultValue="@string/menu_card_byte_order_default"
+        android:summary="@string/menu_card_byte_order_default"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>
+
